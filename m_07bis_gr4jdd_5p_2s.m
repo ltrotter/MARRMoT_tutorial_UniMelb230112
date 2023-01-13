@@ -119,8 +119,7 @@ classdef m_07bis_gr4jdd_5p_2s < MARRMoT_model
             flux_ef   = P - flux_pn;
             flux_ps   = saturation_4(Sstar,x1,flux_pn);
             flux_es   = evap_11(Sstar,x1,flux_en);
-            S1 = max(x1-D1, 0);
-            flux_perc = percolation_3(S1,x1);
+            flux_perc = percolation_3(Sstar,x1);
             flux_q9   = route(.9.*(flux_pn - flux_ps + flux_perc), uh_q9);
             flux_q1   = route(.1.*(flux_pn - flux_ps + flux_perc), uh_q1);
             flux_fr   = recharge_2(3.5,S2,x3,x2);
